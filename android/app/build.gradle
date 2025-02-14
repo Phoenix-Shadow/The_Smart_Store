@@ -1,0 +1,42 @@
+plugins {
+    id "com.android.application"
+    // START: FlutterFire Configuration
+    id 'com.google.gms.google-services'
+    // END: FlutterFire Configuration
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.smartstore.the_smart_store_user"
+    compileSdk = 34 // Set to Android 34
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17 // Use Java 17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17 // Ensure Kotlin targets Java 17
+    }
+
+    defaultConfig {
+        applicationId = "com.smartstore.the_smart_store_user"
+        minSdk = flutter.minSdkVersion // Adjust if needed (e.g., 21 for broader compatibility)
+        targetSdk = 34 // Set to Android 34
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug // Use debug signing for now
+        }
+    }
+}
+
+flutter {
+    source = "../.." // Points to the Flutter project root
+}
