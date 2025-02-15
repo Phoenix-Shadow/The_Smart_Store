@@ -59,10 +59,10 @@ class HomeScreen extends StatelessWidget {
 
                   /// -- Products Heading
                   MSectionHeading(
-                    title: MTexts .popularProducts,
+                    title: MTexts.popularProducts,
                     onPressed: () => Get.to(
-                      () => AllProducts(
-                        title: MTexts .popularProducts,
+                          () => AllProducts(
+                        title: MTexts.popularProducts,
                         futureMethod: ProductRepository.instance.getAllFeaturedProducts(),
                       ),
                     ),
@@ -71,7 +71,7 @@ class HomeScreen extends StatelessWidget {
 
                   /// Products Section
                   Obx(
-                    () {
+                        () {
                       // Display loader while products are loading
                       if (controller.isLoading.value) return const MVerticalProductShimmer();
 
