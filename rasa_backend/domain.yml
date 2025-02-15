@@ -1,0 +1,43 @@
+version: "3.0"
+
+intents:
+  - greet
+  - goodbye
+  - ask_product_info
+  - ask_price
+  - ask_preferences
+  - out_of_scope
+
+responses:
+  utter_greet:
+    - text: "Hello! How can I assist you today?"
+
+  utter_goodbye:
+    - text: "Goodbye! Have a great day."
+
+  utter_ask_product_info:
+    - text: "Sure, let me check the details of {product_name} for you."
+
+  utter_ask_price:
+    - text: "The price of {product_name} is {price}."
+
+  utter_ask_preferences:
+    - text: "Based on your preferences, here are some recommendations: {preferences}."
+
+  utter_fallback:
+    - text: "I'm not sure how to help with that. Can you please rephrase or ask about something else?"
+
+entities:
+  - product_name
+
+slots:
+  product_name:
+    type: text
+  price:
+    type: float
+  preferences:
+    type: text
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

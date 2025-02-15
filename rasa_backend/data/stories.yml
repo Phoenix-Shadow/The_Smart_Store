@@ -1,0 +1,28 @@
+version: "3.1"
+
+stories:
+  - story: Greet and ask product info
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: ask_product_info
+      - action: action_fetch_product_info
+
+  - story: Greet and ask price
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: ask_price
+      - action: action_fetch_product_price
+
+  - story: Greet and ask preferences
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: ask_preferences
+      - action: action_fetch_user_preferences
+
+  - story: Unknown query
+    steps:
+      - intent: out_of_scope
+      - action: utter_fallback
